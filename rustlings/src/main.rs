@@ -36,13 +36,13 @@ fn main() {
     let str3: String = take_and_give(str1);
     println!("{}", str3);
 
-    loop{
-        str2 = str1;
-    }
+ //   loop{
+  //      str2 = str1;
+    //}
     
     //this cannot be given out elsewhere
     // cannot return reference to a stack value from a function
-    let mut str4: String = give_ownership();
+    // let mut str4: String = give_ownership();
 
  //   if(true){
     //    let str5 = str3;
@@ -51,6 +51,13 @@ fn main() {
     //}
 
     //println("{}", str3);
+    let mut j = String::from("hello");
+    change_string(&mut j);
+    println!("{}",j);
+}
+
+fn change_string(some_str: &mut String){
+    some_str.push_str(", world");
 }
 
 fn takes_ownership(s: String){
